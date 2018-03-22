@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RESTful Routes Table</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-10">
+				<div class="jumbotron">
+					<h1>RESTful Routes</h1>
+					<p>A table of all 7 RESTful routes</p>
+				</div>
+				<table class="table table-hover table-bordered">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Path</th>
+							<th>HTTP Verb</th>
+							<th>Purpose</th>
+							<th>Mongoose Method</th>
+							<th>Link to EJS</th>
+							<th>Link to JS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Index</td>
+							<td>&#47;guitars</td>
+							<td>GET</td>
+							<td>List all guitars</td>
+							<td>Guitar&#46;find&#40;&#41;</td>
+							<td>
+                <a class="btn btn-med btn-success" href="./views/index_ejs.html">INDEX&#46;EJS</a>
+              </td>
+              <td>
+                <a class="btn btn-med btn-warning" href="app_js.html#index">APP&#46;JS</a>
+              </td>                
+						</tr>
+						<tr class="success">
+							<td>New</td>
+							<td>&#47;guitars&#47;new</td>
+							<td>GET</td>
+							<td>Show new guitar form</td>
+							<td>N&#47;A</td>
+							<td>
+                <a class="btn btn-med btn-success" href="./views/new_ejs.html">NEW&#46;EJS</a> 
+              </td>
+              <td>
+                <a class="btn btn-med btn-warning" href="app_js.html#new">APP&#46;JS</a>
+              </td>
+						</tr>
+						<tr class="success">
+							<td>Create</td>
+							<td>&#47;guitars</td>
+							<td>POST</td>
+							<td>Create a new guitar&#44; then redirect</td>
+							<td>Guitar&#46;create&#40;&#41;</td>
+              <td>No EJS File</td>
+							<td><a class="btn btn-med btn-warning" href="app_js.html#index">APP&#46;JS</a></td>
+						</tr>
+						<tr class="info">
+							<td>Show</td>
+							<td>&#47;guitars&#47;&#58;id</td>
+							<td>GET</td>
+							<td>Show info about a guitar</td>
+							<td>Guitar&#46;findById&#40;&#41;</td>
+              <td>
+                <a class="btn btn-med btn-success" href="./views/show_ejs.html">SHOW&#46;EJS</a>
+              </td> 
+              <td>
+                <a class="btn btn-med btn-warning" href="app_js.html#show">APP&#46;JS</a>
+              </td>
+						</tr>
+						<tr class="warning">
+							<td>Edit</td>
+							<td>&#47;guitars&#47;&#58;id&#47;edit</td>
+							<td>GET</td>
+							<td>Show edit form for a guitar</td>
+							<td>Guitar&#46;findById&#40;&#41;</td>
+              <td>
+                <a class="btn btn-med btn-success" href="./views/edit_ejs.html">EDIT&#46;EJS</a>
+              </td> 
+              <td>
+                <a class="btn btn-med btn-warning" href="app_js.html#edit">APP&#46;JS</a>
+              </td>
+						</tr>
+						<tr class="warning">
+							<td>Update</td>
+							<td>&#47;guitars&#47;&#58;id</td>
+							<td>PUT</td>
+							<td>Update a guitar&#44; then redirect</td>
+							<td>Guitar&#46;findByIdAndUpdate&#40;&#41;</td>
+              <td>No EJS File</td>
+							<td><a class="btn btn-med btn-warning" href="app_js.html#show">APP&#46;JS</a></td>
+						</tr>
+						<tr class="danger">
+							<td>Destroy</td>
+							<td>&#47;guitars&#47;&#58;id</td>
+							<td>DELETE</td>
+							<td>Delete a guitar&#44; then redirect</td>
+							<td>Guitar&#46;findByIdAndRemove&#40;&#41;</td>
+              <td>No EJS File</td>
+							<td><a class="btn btn-med btn-warning" href="app_js.html#show">APP&#46;JS</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+	</div>
+</body>
+</html>

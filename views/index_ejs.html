@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Index&#46;ejs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+      <div class="jumbotron"><h1>INDEX&#46;EJS</h1></div>
+    </div> <!-- Close container -->
+    <div class="container">
+      <div><code>&lt;&#37; include &#46;&#47;partials&#47;header &#37;&gt;</code></div>	
+      <div><code>&lt;div class&#61;&#39;ui main container&#39;&gt; </code></div>
+      <div><code>&emsp;&lt;&#37; for&#40;let i &#61; 0&#59; i &lt; guitars&#46;length&#59; i&#43;&#43;&#41;&#123; &#37;&gt;</code></div>	
+      <div><code>&emsp;&emsp;&lt;div class&#61;&#39;ui segment&#39;&gt; </code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;h2&gt;&lt;&#37;&#61; guitars&#91;i&#93;&#91;&#39;title&#39;&#93; &#37;&gt;&lt;&#47;h2&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;img class&#61;&#39;ui image&#39; src&#61;&#34;&lt;&#37;&#61; guitars&#91;i&#93;&#91;&#39;image&#39;&#93; &#37;&gt;&#34;&gt;</code></div>	
+      <div><code>&emsp;&emsp;&emsp;&lt;p&gt;&lt;&#37;&#61; guitars&#91;i&#93;&#91;&#39;body&#39;&#93;&#46;substring&#40;0&#44; 100&#41; &#37;&gt;&#46;&#46;&#46;&lt;&#47;p&gt;</code></div>	
+      <div><code>&emsp;&emsp;&emsp;&lt;a href&#61;&#34;&#47;guitars&#47;&lt;&#37;&#61; guitars&#91;i&#93;&#91;&#39;&#95;id&#39;&#93; &#37;&gt;&#34;&gt;Read More&lt;&#47;a&gt;</code></div>	
+      <div><code>&emsp;&emsp;&emsp;&lt;span&gt;&lt;&#37;&#61; guitars&#91;i&#93;&#91;&#39;created&#39;&#93;&#46;toDateString&#40;&#41; &#37;&gt;&lt;&#47;span&gt;</code></div>
+      <div><code>&emsp;&emsp;&lt;&#47;div&gt;</code></div>	
+      <div><code>&emsp;&lt;&#37; &#125; &#37;&gt;</code></div>	
+      <div><code>&lt;&#47;div&gt;</code></div>	
+      <p></p>
+      <a class="btn btn-med btn-warning" href="../app_js.html#index">Go to APP&#46;JS</a>
+      <a class="btn btn-med btn-primary" href="partials/header_ejs.html">Go to HEADER&#46;EJS</a>
+      <a class="btn btn-med btn-primary" href="partials/footer_ejs.html">Go to FOOTER&#46;EJS</a>
+      <a class="btn btn-med btn-primary" href="../public/stylesheets/app_css.html">Go to APP&#46;CSS</a>
+      <a class="btn btn-med btn-success" href="../restful_routes.html">Back to table</a>
+    </div> <!-- Close container -->
+	</body>
+</html>
+
+
+
+
+      
+      
+      
+      
+      
+    
+ 
+
+
+

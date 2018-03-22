@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SHOW&#46;EJS</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+	<body>
+    <div class="container">
+      <div class="jumbotron"><h1>SHOW&#46;EJS</h1></div>
+    </div> <!-- Close container -->    
+    <div class="container">
+      <div><code>&lt;&#37; include &#46;&#47;partials&#47;header &#37;&gt;</code></div>	
+      <div><code>&lt;div class&#61;&#39;ui main text container segment&#39;&gt;</code></div>
+      <div><code>&emsp;&lt;div class&#61;&#39;ui huge header&#39;&gt;&lt;&#37;&#61; guitar&#91;&#39;title&#39;&#93; &#37;&gt;&lt;&#47;div&gt;</code></div>
+      <div><code>&emsp;&lt;div class&#61;&#39;ui top attached&#39;&gt;</code></div>
+      <div><code>&emsp;&emsp;&lt;div class&#61;&#39;item&#39;&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;img class&#61;&#39;ui centered rounded image&#39; src&#61;&#34;&lt;&#37;&#61; guitar&#91;&#39;image&#39;&#93; &#37;&gt;&#34;&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;div class&#61;&#39;content&#39;&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&emsp;&lt;span&gt;&lt;&#37;&#61; guitar&#91;&#39;created&#39;&#93;&#46;toDateString&#40;&#41; &#37;&gt;&lt;&#47;span&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;&#47;div&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;div class&#61;&#39;description&#39;&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&emsp;&lt;p&gt;&lt;&#37;&#61; guitar&#91;&#39;body&#39;&#93; &#37;&gt;&lt;&#47;p&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;&#47;div&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;a class&#61;&#39;ui orange basic button&#39; href&#61;&#39;&#47;guitars&#47;&lt;&#37;&#61; guitar&#91;&#34;&#95;id&#34;&#93; &#37;&gt;&#47;edit&#39;&gt;Edit&lt;&#47;a&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;form id&#61;&#39;delete&#39; action&#61;&#39;&#47;guitars&#47;&lt;&#37;&#61; guitar&#91;&#34;&#95;id&#34;&#93; &#37;&gt;&#63;&#95;method&#61;DELETE&#39; method&#61;&#39;POST&#39;&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&emsp;&lt;button class&#61;&#39;ui red basic button&#39;&gt;Delete&lt;&#47;button&gt;</code></div>
+      <div><code>&emsp;&emsp;&emsp;&lt;&#47;form&gt;</code></div>
+      <div><code>&emsp;&emsp;&lt;&#47;div&gt;</code></div>
+      <div><code>&emsp;&lt;&#47;div&gt;</code></div>
+      <div><code>&lt;&#47;div&gt;</code></div>
+      <div><code>&lt;&#37; include &#46;&#47;partials&#47;footer &#37;&gt;</code></div>	
+      <p></p>
+      <a class="btn btn-med btn-warning" href="../app_js.html#show">Back to APP&#46;JS</a>
+      <a class="btn btn-med btn-primary" href="partials/header_ejs.html">Go to HEADER&#46;EJS</a>
+      <a class="btn btn-med btn-primary" href="partials/footer_ejs.html">Go to FOOTER&#46;EJS</a>
+      <a class="btn btn-med btn-primary" href="../public/stylesheets/app_css.html">Go to APP&#46;CSS</a>
+      <a class="btn btn-med btn-success" href="../restful_routes.html">Back to table</a>
+    </div> <!-- Close container -->
+	</body>
+</html>

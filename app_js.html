@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>APP&#46;JS</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron"><h1>APP&#46;JS</h1></div>
+  </div> <!-- Close container -->
+
+  <div class="container">
+    <div><strong>&#47;&#47;Setting up the app</strong>  <a class="btn btn-med btn-success" href="restful_routes.html">Back to table</a></div>
+    <p></p>
+    <div><code>let express &#61; require&#40;&#39;express&#39;&#41;&#59;</code></div>
+    <div><code>let bodyParser &#61; require&#40;&#39;body&#45;parser&#39;&#41;&#59;</code></div>
+    <div><code>let mongoose &#61; require&#40;&#39;mongoose&#39;&#41;&#59;</code></div>
+    <div><code>let methodOverride &#61; require&#40;&#39;method&#45;override&#39;&#41;&#59;</code></div>
+    <div><code>let expressSanitizer &#61; require&#40;&#39;express&#45;sanitizer&#39;&#41;&#59;</code></div>
+    <div><code>let app &#61; express&#40;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;Configuring the app</strong>  <a class="btn btn-med btn-success" href="restful_routes.html">Back to table</a></div>
+    <p></p>
+    <div><code>&#47;&#47;Connect to mongo db</code></div>
+    <div><code>mongoose&#46;connect&#40;&#39;mongodb&#58;&#47;&#47;localhost&#47;guitar&#95;app&#39;&#41;&#59;</code></div>
+    <p></p>
+    <div><code>&#47;&#47;Set up the app to fully qualify &#46;ejs extensions</code></div>
+    <div><code>app&#46;set&#40;&#39;view engine&#39;&#44; &#39;ejs&#39;&#41;&#59;</code></div>
+    <p></p>
+    <div><code>&#47;&#47;Set up the app to serve contents of public&#92;</code></div>
+    <div><code>app&#46;use&#40;express&#46;static&#40;&#39;public&#39;&#41;&#41;&#59;</code></div>
+    <p></p>
+    <div><code>&#47;&#47;Set up the app to use body&#45;parser</code></div>
+    <div><code>app&#46;use&#40;bodyParser&#46;urlencoded&#40;&#123;extended&#58; true&#125;&#41;&#41;&#59;</code></div>
+    <p></p>
+    <div><code>&#47;&#47;Set up the app to use express&#45;sanitizer</code></div>
+    <div><code>&#47;&#47;Must be after the body&#45;parser use method</code></div>
+    <div><code>app&#46;use&#40;expressSanitizer&#40;&#41;&#41;&#59;</code></div>
+    <p></p>
+    <div><code>&#47;&#47;Set up the app to use method&#45;override</code></div>
+    <div><code>app&#46;use&#40;methodOverride&#40;&#39;&#95;method&#39;&#41;&#59;</code></div>
+  </div> <!-- close container -->
+  
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;DB Schema</strong>  <a class="btn btn-med btn-success" href="restful_routes.html">Back to table</a></div>
+    <p></p>
+    <div><code>&#47;&#47;Set up database schema</code></div>
+    <div><code>let guitarSchema &#61; new mongoose&#46;schema&#40;&#123;</code></div>
+    <div><code>&emsp;title&#58; String&#44;</code></div>
+    <div><code>&emsp;image&#58; String&#44;</code></div>
+    <div><code>&emsp;body&#58; String&#44;</code></div>
+    <div><code>&emsp;created&#58; &#123;type&#58; Date&#44; default&#58; Date&#46;now&#125;</code></div>
+    <div><code>&#125;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+  
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;DB Model</strong>  <a class="btn btn-med btn-success" href="restful_routes.html">Back to table</a></div>
+    <p></p>
+    <div><code>&#47;&#47;Compile schema into a model</code></div>
+    <div><code>let Guitar &#61; mongoose&#46;model&#40;&#39;Guitar&#39;&#44; guitarSchema&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;RESTful Routes</strong>  <a class="btn btn-med btn-success" href="restful_routes.html">Back to table</a></div>
+    <p></p>
+      <div><code>app&#46;route&#40;&#39;&#47;&#39;&#41;</code></div>
+      <div><code>&emsp;&#46;get&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+      <div><code>&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#39;&#41;&#59;</code></div>
+      <div><code>&emsp;&#125;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;Route for INDEX and CREATE</strong>  <a class="btn btn-med btn-success" href="restful_routes.html" name="index" id="index">Back to table</a>  <a class="btn btn-med btn-warning" href="./views/index_ejs.html">INDEX&#46;EJS</a></div>
+    <p></p> 
+    <div><code>app&#46;route&#40;&#39;&#47;guitars&#39;&#41;</code></div>
+    <div><code>&emsp;&#47;&#47; INDEX</code></div>
+    <div><code>&emsp;&#46;get&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Find items</code></div>
+    <div><code>&emsp;&emsp;Guitar&#46;find&#40;&#123;&#125;&#44; &#40;err&#44; guitars&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;if&#40;err&#41;&#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;&#39;Error in finding items&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;err&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125; else &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;&#47;&#47;render index&#46;ejs with data&#46; &#123;app&#46;js variable &#58; index&#46;ejs variable&#125;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;render&#40;&#39;index&#39;&#44; &#123;guitars&#58; guitars&#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;</code></div>
+    <div><code>&emsp;&emsp;&#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&#125;&#41;</code></div> 
+    <div><code>&emsp;&#47;&#47; CREATE</code></div>
+    <div><code>&emsp;&#46;post&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Sanitize the input</code></div>
+    <div><code>&emsp;&emsp;req&#46;body&#46;guitar&#46;body &#61; req&#46;sanitize&#40;req&#46;body&#46;guitar&#46;body&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Create guitar</code></div>
+    <div><code>&emsp;&emsp;Guitar&#46;create&#40;req&#46;body&#46;guitar&#44; &#40;err&#44; newGuitar&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;if &#40;err&#41; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;&#39;Error occurred when adding a new guitar&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;render&#40;&#39;new&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;else&#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;&#39;Successfully added a guitar&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;newGuitar&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;&#47;&#47;redirect to back to INDEX to show all guitars</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;</code></div>
+    <div><code>&emsp;&emsp;&#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&#125;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+  
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;Route for NEW</strong>  <a class="btn btn-med btn-success" href="restful_routes.html" name="new" id="new">Back to table</a>  <a class="btn btn-med btn-warning" href="./views/new_ejs.html">NEW&#46;EJS</a></div>
+    <p></p>    
+    <div><code>app&#46;route&#40;&#39;&#47;guitars&#47;new&#39;&#41;</code></div>
+    <div><code>&emsp;&#47;&#47; NEW</code></div>
+    <div><code>&emsp;&#46;get&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Render the form to add a new item</code></div>
+    <div><code>&emsp;&emsp;res&#46;render&#40;&#39;new&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&#125;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+  
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;Route for SHOW&#44; UPDATE and DESTROY</strong>  <a class="btn btn-med btn-success" href="restful_routes.html" name="show" id="show">Back to table</a>  <a class="btn btn-med btn-warning" href="./views/show_ejs.html">SHOW&#46;EJS</a></div>
+    <p></p>    
+    <div><code>app&#46;route&#40;&#39;&#47;guitars&#47;&#58;id&#39;&#41;</code></div>
+    <div><code>&emsp;&#47;&#47; SHOW</code></div>    
+    <div><code>&emsp;&#46;get&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Find item in db by id</code></div>
+    <div><code>&emsp;&emsp;Guitar&#46;findById&#40;req&#46;params&#46;id&#44; &#40;err&#44; foundGuitar&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;if &#40;err&#41; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;&#39;Error occurred during finding guitar&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;else&#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;&#47;&#47;render show&#46;ejs with data&#46; &#123;show&#46;ejs variable &#58; app&#46;js variable&#125;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;render&#40;&#39;show&#39;&#44; &#123; guitar&#58; foundGuitar &#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;</code></div>
+    <div><code>&emsp;&emsp;&#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&#125;&#41;</code></div>
+    <div><code>&emsp;&#47;&#47; UPDATE</code></div>    
+    <div><code>&emsp;&#46;put&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Sanitize the input</code></div>
+    <div><code>&emsp;&emsp;req&#46;body&#46;guitar&#46;body &#61; req&#46;sanitize&#40;req&#46;body&#46;guitar&#46;body&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Find item in db by id and update it</code></div>
+    <div><code>&emsp;&emsp;Guitar&#46;findByIdAndUpdate&#40;req&#46;params&#46;id&#44; req.body.guitar&#44; &#40;err&#44; updatedGuitar&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;if &#40;err&#41; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;&#39;Error occurred during updating guitar&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;else&#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;&#47;&#47;redirect back to SHOW route to show update on specific item</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#47;&#39; &#43; req&#46;params&#46;id&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;</code></div>
+    <div><code>&emsp;&emsp;&#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&#125;&#41;</code></div>
+    <div><code>&emsp;&#47;&#47; DESTROY</code></div>    
+    <div><code>&emsp;&#46;delete&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Find item in db by id and remove it</code></div>
+    <div><code>&emsp;&emsp;Guitar&#46;findByIdAndRemove&#40;req&#46;params&#46;id&#44; &#40;err&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;if &#40;err&#41; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;&#39;Error occurred during deleting guitar&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;else&#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;&#47;&#47;redirect back to INDEX route to show all remaining items</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;</code></div>
+    <div><code>&emsp;&emsp;&#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&#125;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+  
+  <p></p>
+  
+  <div class="container">
+    <div><strong>&#47;&#47;Route for EDIT</strong>  <a class="btn btn-med btn-success" href="restful_routes.html" name="edit" id="edit">Back to table</a>  <a class="btn btn-med btn-warning" href="./views/edit_ejs.html">EDIT&#46;EJS</a></div>
+    <p></p>    
+    <div><code>app&#46;route&#40;&#39;&#47;guitars&#47;&#58;id&#47;edit&#39;&#41;</code></div> 
+    <div><code>&emsp;&#47;&#47; EDIT</code></div>    
+    <div><code>&emsp;&#46;get&#40;&#40;req&#44; res&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&#47;&#47;Find item in db by id</code></div>
+    <div><code>&emsp;&emsp;Guitar&#46;findById&#40;req&#46;params&#46;id&#44; &#40;err&#44; foundGuitar&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;if &#40;err&#41; &#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;console&#46;log&#40;&#39;Error occurred finding guitar to edit&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;redirect&#40;&#39;&#47;guitars&#39;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;else&#123;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;&#47;&#47;render edit&#46;ejs with form filled out using contents of found item. &#123;edit&#46;ejs variable &#58; app&#46;js variable&#125;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&emsp;res&#46;render&#40;&#39;edit&#39;&#44; &#123; guitar&#58; foundGuitar &#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&emsp;&emsp;&#125;</code></div>
+    <div><code>&emsp;&emsp;&#125;&#41;&#59;</code></div>
+    <div><code>&emsp;&#125;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+  
+  <p></p>  
+  
+  <div class="container">
+    <div><strong>&#47;&#47;Server Listener</strong>  <a class="btn btn-med btn-success" href="restful_routes.html" name="index">Back to table</a></div>
+    <p></p>
+    <div><code>app&#46;listen&#40;3000&#44; &#40;&#41; &#61;&gt; &#123;</code></div>
+    <div><code>&emsp;console&#46;log&#40;&#39;Guitar&#95;App is listening on port 3000&#39;&#41;&#59;</code></div>
+    <div><code>&#125;&#41;&#59;</code></div>
+  </div> <!-- Close container -->
+  
+  <div class="container">
+    <h3>This is the end of app&#46;js file</h3>
+  </div>
+</body>
+</html>
