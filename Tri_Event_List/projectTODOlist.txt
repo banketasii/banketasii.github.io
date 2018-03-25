@@ -1,0 +1,13 @@
+@Complete
+-Basic HTML structure
+-Functionality for adding a new exercise
+-Functionality for removing an exercise
+-Add funny triathlon pics
+-CSS Styling
+-Add icon next to event.  Run next to run etc...  If no event found use finish flag.
+-Fixed icon issue
+-Fixed issue of Typescript compiler.  Added tsconfig file, added current libs, pointed to ts file that will be compiled.
+-Refactor js
+
+@Incomplete
+
