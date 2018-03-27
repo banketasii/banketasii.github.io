@@ -1,0 +1,86 @@
+/* Section 15 Lecture 163 - 171 
+   Color Game */
+
+body{
+  background-color: #232323;
+}
+
+/* Overriding the margin of the bootstrap container class*/
+.container{
+  margin: 20px auto;
+}
+
+h1{
+  text-align: center;
+  color: #fff;
+  background-color: steelblue;
+  margin: 0;
+  line-height: 1.1;
+  padding:20px 0;
+}
+
+/* Adds the needed line break instead of using <br> tags */
+h1 span{
+  display: block;
+}
+
+#rgb-color{
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
+.gameSquare{
+  width: 30%;
+  background: purple;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border: none;
+  border-radius: 15%;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+#stripe{
+  background-color: white;
+  height: 30px;
+  text-align: center;
+  color: black;
+}
+
+#message{
+  display: inline-block;
+  width: 20%;
+}
+
+/* Overriding bootstrap button css to make the buttons
+   act the same as in video.  I used bootstrap btn-link as my buttons.
+   1. Removed the text-decoration
+   2. Removed the button border
+   3. Removed the button border-radius
+   4. Removed the button outline
+   5. Removed the button outline-offset */
+#easy, #hard, #reset{
+  text-transform: uppercase;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  text-decoration: none;
+  color: steelblue;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+  outline-offset: 0;  
+}
+
+.selected,
+#easy.selected, #hard.selected,
+#easy:focus, #hard:focus,
+#reset:visited, #easy:visited, #hard:visited,
+#reset:hover, #easy:hover, #hard:hover,
+#reset:active, #easy:active, #hard:active{
+  background-color: steelblue;
+  color: white;
+}

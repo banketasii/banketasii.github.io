@@ -1,0 +1,33 @@
+<!-- Section 15 Lecture 163 - 171 
+     Color Game -->
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Color Game</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="../../03_Bootstrap/Sect07_Bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css"> 
+		<link type="text/css" rel="stylesheet" href="01_colorgame.css"> 
+	</head>
+
+	<body id="game">
+    <h1 id="header">The Great<span id="rgb-color"></span>Color Game</h1>
+    <div id="stripe">
+      <button id="reset" class="btn btn-link btn-xs gameButton"></button>
+      <span id="message"></span>
+      <button id="easy" class="btn btn-link btn-xs gameButton" value="3">Easy</button>
+      <button id="hard" class="btn btn-link btn-xs gameButton selected" value="6">Hard</button>
+    </div>
+    <div class="container">
+      <div class="thumbnail gameSquare"></div>
+      <div class="thumbnail gameSquare"></div>
+      <div class="thumbnail gameSquare"></div>
+      <div class="thumbnail gameSquare"></div>
+      <div class="thumbnail gameSquare"></div>
+      <div class="thumbnail gameSquare"></div>
+    </div>
+		<script type="text/javascript" src="01_colorgame.js"></script>
+	</body>
+</html>
