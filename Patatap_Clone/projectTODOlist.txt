@@ -1,0 +1,8 @@
+@Complete
+Create basic folder structure and files
+Add paperjs
+Add howlerjs
+Refactor code
+Reorder file structure
+
+@Incomplete
